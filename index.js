@@ -30,7 +30,6 @@ class Signer {
 
     this.options = {
       args: this.args,
-      executablePath: await chromium.executablePath,
       headless: true,
       ignoreHTTPSErrors: true,
       userDataDir: './tmp'
@@ -38,6 +37,7 @@ class Signer {
   }
 
   async init() {
+    this.options.executablePath = await chromium.executablePath;
     this.browser = await chromium.launch(this.options);
     this.page = await this.browser.newPage();
     await this.page.goto('file://' + __dirname + '/index.html', { waitUntil: 'load' });
