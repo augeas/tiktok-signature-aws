@@ -30,6 +30,7 @@ class Signer {
 
     this.options = {
       args: this.args,
+      executablePath: await chromium.executablePath,
       headless: true,
       ignoreHTTPSErrors: true,
       userDataDir: './tmp'
