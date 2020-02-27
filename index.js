@@ -8,14 +8,7 @@ puppeteer.use(pluginStealth())
 
 class Signer {
   userAgent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1'
-  args = [
-    '--no-sandbox',
-    '--disable-setuid-sandbox',
-    '--disable-infobars',
-    '--window-position=0,0',
-    '--ignore-certifcate-errors',
-    '--ignore-certifcate-errors-spki-list',
-  ]
+  args = chromium.args
 
   constructor(userAgent, tac) {
     if (userAgent) {
@@ -25,7 +18,7 @@ class Signer {
     if (tac) {
       this.tac = tac
     }
-
+    
     this.args.push(`--user-agent="${this.userAgent}"`)
 
     this.options = {
