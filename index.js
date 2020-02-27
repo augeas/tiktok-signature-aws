@@ -1,3 +1,4 @@
+const chromium = require('chrome-aws-lambda');
 const puppeteer = require("puppeteer-extra")
 const devices = require('puppeteer/DeviceDescriptors');
 const iPhonex = devices['iPhone X'];
@@ -36,7 +37,7 @@ class Signer {
   }
 
   async init() {
-    this.browser = await puppeteer.launch(this.options);
+    this.browser = await chromium.launch(this.options);
     this.page = await this.browser.newPage();
     await this.page.goto('file://' + __dirname + '/index.html', { waitUntil: 'load' });
     await this.page.emulate(iPhonex);

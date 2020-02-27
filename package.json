@@ -8,16 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/carcabot/tiktok-signature.git"
+    "url": "git+https://github.com/auges/tiktok-signature-aws.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/carcabot/tiktok-signature/issues"
+    "url": "https://github.com/augeas/tiktok-signature-aws/issues"
   },
-  "homepage": "https://github.com/carcabot/tiktok-signature#readme",
+  "homepage": "https://github.com/augeas/tiktok-signature-aws#readme",
   "dependencies": {
+    "chrome-aws-lambda": "^1.20.3",
     "puppeteer": "^2.1.1",
     "puppeteer-extra": "^3.1.9",
     "puppeteer-extra-plugin-stealth": "^2.4.9"
