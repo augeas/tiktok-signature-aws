@@ -1,6 +1,7 @@
 import requests
 
 signature = "s0Ju9AAgEBCwzpufd4dd9bNCb-AAO0V"
+#signature= "s0Ju9AAgEBAq1O-Bd4dd9bNCZ-AAO0V"
 
 referer = "https://www.tiktok.com/@ondymikula/video/6757762109670477061"
 
