@@ -20,6 +20,9 @@ class Signer {
     }
     
     this.args.push(`--user-agent="${this.userAgent}"`)
+    this.args.push(`--window-position=0,0`)
+    this.args.push(`--ignore-certifcate-errors`)
+    this.args.push(`--ignore-certifcate-errors-spki-list`)
 
     this.options = {
       args: this.args,
