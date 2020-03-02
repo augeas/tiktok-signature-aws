@@ -36,9 +36,10 @@ class Signer {
     this.options.executablePath = await chromium.executablePath;
     this.browser = await chromium.puppeteer.launch(this.options);
     this.page = await this.browser.newPage();
-    await this.page.goto('file://' + __dirname + '/index.html', { waitUntil: 'load' });
     await this.page.emulate(iPhonex);
     await this.page.setUserAgent(this.userAgent);
+    await this.page.goto('file://' + __dirname + '/index.html', { waitUntil: 'load' });
+
 
     if (this.tac) {
       await this.page.evaluate((x) => {
