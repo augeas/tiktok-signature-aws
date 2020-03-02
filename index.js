@@ -49,7 +49,7 @@ class Signer {
     }
 
     let actuallUserAgent = await this.page.evaluate(`(function() {return navigator.userAgent}())`)
-    console.log("HEADLESS USER-AGENT: "actuallUserAgent)
+    console.log("HEADLESS USER-AGENT: "+actuallUserAgent)
     
     return this
   }
