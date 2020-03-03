@@ -1,10 +1,10 @@
 const chromium = require('chrome-aws-lambda');
-const puppeteer = require("puppeteer-extra")
+const { addExtra } = require('puppeteer-extra');
+const puppeteer = addExtra(chromium.puppeteer);
 const devices = require('puppeteer/DeviceDescriptors');
 const iPhonex = devices['iPhone X'];
 const pluginStealth = require("puppeteer-extra-plugin-stealth")
-
-puppeteer.use(pluginStealth())
+puppeteer.use(pluginStealth());
 
 
 class Signer {
@@ -35,7 +35,7 @@ class Signer {
 
   async init() {
     this.options.executablePath = await chromium.executablePath;
-    this.browser = await chromium.puppeteer.launch(this.options);
+    this.browser = await puppeteer.launch(this.options);
     this.page = await this.browser.newPage();
     await this.page.emulate(iPhonex);
     await this.page.setUserAgent(this.userAgent);
